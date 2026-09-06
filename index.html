@@ -1,238 +1,750 @@
-<!-- ==================================
-     ẢNH XE
-=================================== -->
 
-<img
-    class="car-image"
-    src="https://images.summitmedia-digital.com/sap/images/2021/12/09/5-almera-1639020473.jpg"
-    alt="Nissan Almera"
->
+<!DOCTYPE html>
+<html lang="vi"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"> <meta name="format-detection" content="telephone=no"> <title>Liên hệ chủ xe</title>
+<style>
+    * {
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+    }
 
+    html,
+    body {
+        width: 100%;
+        min-height: 100%;
+    }
 
-<section class="content">
+    body {
+        margin: 0;
+        padding:
+            max(12px, env(safe-area-inset-top))
+            max(12px, env(safe-area-inset-right))
+            max(12px, env(safe-area-inset-bottom))
+            max(12px, env(safe-area-inset-left));
 
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-    <!-- TIÊU ĐỀ -->
+        font-family:
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            Roboto,
+            Helvetica,
+            Arial,
+            sans-serif;
 
-    <div class="title">
-        LIÊN HỆ CHỦ XE
-    </div>
+        background: #f2f2f2;
+    }
 
+    /* =========================
+       KHUNG CHÍNH
+    ========================= */
 
-    <!-- ==================================
-         BIỂN SỐ
-    =================================== -->
+    .card {
+        width: min(100%, 560px);
+        overflow: hidden;
 
-    <div class="info-label">
-        Biển số xe
-    </div>
+        background: #ffffff;
 
+        border-radius: 18px;
 
-    <div class="license-plate">
+        box-shadow:
+            0 10px 30px rgba(0, 0, 0, 0.15);
+    }
 
+    /* =========================
+       ẢNH XE
+    ========================= */
 
-        <svg
-            class="plate-pattern"
-            viewBox="0 0 520 110"
-            preserveAspectRatio="none"
-            aria-hidden="true"
-        >
+    .car-image {
+        display: block;
 
-            <g>
+        width: 100%;
+        height: clamp(210px, 42vw, 330px);
 
-                <path d="
-                    M0 16
-                    C70 0 145 30 220 16
-                    S370 0 520 16
-                "/>
+        object-fit: cover;
+        object-position: center;
 
-                <path d="
-                    M0 30
-                    C70 14 145 44 220 30
-                    S370 14 520 30
-                "/>
+        background: #eeeeee;
+    }
 
-                <path d="
-                    M0 44
-                    C70 28 145 58 220 44
-                    S370 28 520 44
-                "/>
+    /* =========================
+       NỘI DUNG
+    ========================= */
 
-                <path d="
-                    M0 58
-                    C70 42 145 72 220 58
-                    S370 42 520 58
-                "/>
+    .content {
+        padding:
+            clamp(22px, 5vw, 30px)
+            clamp(18px, 5vw, 30px)
+            clamp(24px, 5vw, 32px);
+    }
 
-                <path d="
-                    M0 72
-                    C70 56 145 86 220 72
-                    S370 56 520 72
-                "/>
+    /* =========================
+       TIÊU ĐỀ
+    ========================= */
 
-                <path d="
-                    M0 86
-                    C70 70 145 100 220 86
-                    S370 70 520 86
-                "/>
+    .title {
+        margin-bottom: clamp(20px, 5vw, 28px);
 
-                <path d="
-                    M0 100
-                    C70 84 145 114 220 100
-                    S370 84 520 100
-                "/>
+        text-align: center;
 
-            </g>
+        font-size: clamp(22px, 6vw, 30px);
+        line-height: 1.15;
 
-        </svg>
+        font-weight: 900;
 
+        color: #111111;
+    }
 
-        <div
-            class="security-emblem"
-            aria-hidden="true"
-        ></div>
+    /* =========================
+       LABEL
+    ========================= */
 
+    .info-label {
+        margin-bottom: 8px;
 
-        <div
-            class="plate-line"
-            aria-hidden="true"
-        ></div>
+        text-align: center;
 
+        font-size: clamp(14px, 3.8vw, 17px);
+        line-height: 1.2;
 
-        <div class="license-number">
-            30K-391.52
+        font-weight: 700;
+
+        color: #555555;
+    }
+
+    /* =========================
+       BIỂN SỐ
+    ========================= */
+
+    .license-plate {
+        position: relative;
+
+        width: 100%;
+
+        aspect-ratio: 520 / 110;
+
+        margin:
+            0 auto
+            clamp(20px, 5vw, 28px);
+
+        overflow: hidden;
+
+        background: #ffffff;
+
+        border: 3px solid #111111;
+        border-radius: 8px;
+
+        box-shadow:
+            inset 0 1px 2px rgba(0, 0, 0, 0.10),
+            inset 0 -2px 3px rgba(0, 0, 0, 0.08),
+            0 3px 7px rgba(0, 0, 0, 0.18);
+    }
+
+    .plate-pattern {
+        position: absolute;
+
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+
+        z-index: 1;
+
+        pointer-events: none;
+    }
+
+    .plate-pattern path {
+        fill: none;
+
+        stroke: #777777;
+
+        stroke-width: 0.7;
+
+        opacity: 0.16;
+    }
+
+    /* Hoa văn chìm */
+
+    .security-emblem {
+        position: absolute;
+
+        top: 8%;
+        left: 50%;
+
+        width: 24px;
+        height: 24px;
+
+        transform: translateX(-50%);
+
+        z-index: 3;
+
+        border-radius: 50%;
+
+        background:
+            radial-gradient(
+                circle at 35% 30%,
+                rgba(255,255,255,0.95) 0%,
+                rgba(255,255,255,0.50) 28%,
+                rgba(120,120,120,0.12) 60%,
+                rgba(70,70,70,0.22) 100%
+            );
+
+        box-shadow:
+            inset 1px 1px 2px rgba(0,0,0,0.22),
+            inset -1px -1px 2px rgba(255,255,255,0.95);
+
+        opacity: 0.42;
+    }
+
+    .security-emblem::before {
+        content: "★";
+
+        position: absolute;
+
+        left: 50%;
+        top: 50%;
+
+        transform: translate(-50%, -52%);
+
+        font-size: 11px;
+        line-height: 1;
+
+        color: rgba(90, 90, 90, 0.35);
+
+        text-shadow:
+            1px 1px 1px rgba(255,255,255,0.9),
+            -1px -1px 1px rgba(0,0,0,0.15);
+    }
+
+    .plate-line {
+        position: absolute;
+
+        left: 7%;
+        right: 7%;
+        top: 34%;
+
+        height: 1px;
+
+        z-index: 3;
+
+        background: rgba(40,40,40,0.30);
+
+        box-shadow:
+            0 1px 1px rgba(255,255,255,0.85);
+    }
+
+    .license-number {
+        position: absolute;
+
+        left: 2%;
+        right: 2%;
+        bottom: 5%;
+
+        z-index: 4;
+
+        text-align: center;
+
+        font-family:
+            Arial,
+            Helvetica,
+            sans-serif;
+
+        font-size: clamp(28px, 8vw, 48px);
+        line-height: 1;
+
+        font-weight: 900;
+
+        letter-spacing: clamp(1px, 0.35vw, 2px);
+
+        color: #050505;
+
+        white-space: nowrap;
+
+        text-shadow:
+            0 1px 0 rgba(255,255,255,0.7),
+            0 -1px 0 rgba(0,0,0,0.20);
+    }
+
+    /* =========================
+       SỐ ĐIỆN THOẠI
+       
+       QUAN TRỌNG:
+       Đây là LINK TEL trực tiếp.
+       Không JavaScript.
+       Không onclick.
+       ========================= */
+
+    .phone-box {
+        width: 100%;
+
+        min-height: clamp(58px, 14vw, 72px);
+
+        margin:
+            0 auto
+            clamp(22px, 5vw, 30px);
+
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        gap: 10px;
+
+        padding: 8px 18px;
+
+        border-radius: clamp(10px, 2.5vw, 15px);
+
+        background:
+            linear-gradient(
+                to bottom,
+                #34C759 0%,
+                #32C257 48%,
+                #30B957 100%
+            );
+
+        border: 1px solid #28A745;
+
+        box-shadow:
+            inset 0 1px 0 rgba(255,255,255,0.35),
+            inset 0 -3px 5px rgba(0,0,0,0.16),
+            0 5px 0 #24963D,
+            0 8px 12px rgba(0,0,0,0.18);
+
+        cursor: pointer;
+
+        color: #ffffff !important;
+
+        text-decoration: none !important;
+
+        -webkit-text-decoration: none !important;
+
+        user-select: none;
+        -webkit-user-select: none;
+
+        transition:
+            transform 0.08s ease,
+            box-shadow 0.08s ease;
+
+        /*
+         * Không dùng:
+         * onclick
+         * JavaScript
+         * window.location
+         * setTimeout
+         * iframe
+         * tự động click
+         */
+    }
+
+    .phone-box:link,
+    .phone-box:visited,
+    .phone-box:hover,
+    .phone-box:active,
+    .phone-box:focus {
+        color: #ffffff !important;
+
+        text-decoration: none !important;
+
+        -webkit-text-decoration: none !important;
+    }
+
+    .phone-box:active {
+        transform: translateY(4px);
+
+        box-shadow:
+            inset 0 2px 5px rgba(0,0,0,0.25),
+            0 1px 0 rgba(0,0,0,0.15);
+    }
+
+    /* Icon điện thoại */
+
+    .phone-icon {
+        width: clamp(22px, 6vw, 28px);
+        height: clamp(22px, 6vw, 28px);
+
+        flex: 0 0 auto;
+
+        fill: #ffffff;
+
+        filter:
+            drop-shadow(
+                0 1px 1px rgba(0,0,0,0.15)
+            );
+    }
+
+    /* Số điện thoại */
+
+    .phone-number {
+        display: block;
+
+        font-family:
+            Arial,
+            Helvetica,
+            sans-serif;
+
+        font-size: clamp(28px, 8vw, 48px);
+
+        line-height: 1;
+
+        font-weight: 900;
+
+        letter-spacing: clamp(1px, 0.4vw, 2px);
+
+        white-space: nowrap;
+
+        color: #ffffff !important;
+
+        text-decoration: none !important;
+
+        -webkit-text-decoration: none !important;
+    }
+
+    /* =========================
+       NÚT ZALO
+    ========================= */
+
+    .buttons {
+        width: 100%;
+    }
+
+    .button.zalo {
+        width: 100%;
+
+        min-height: clamp(58px, 14vw, 70px);
+
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        gap: 9px;
+
+        padding: 10px 12px;
+
+        border-radius: 14px;
+
+        text-decoration: none;
+
+        font-size: clamp(14px, 3.7vw, 18px);
+
+        font-weight: 900;
+
+        color: #ffffff;
+
+        cursor: pointer;
+
+        user-select: none;
+        -webkit-user-select: none;
+
+        background:
+            linear-gradient(
+                to bottom,
+                #28aef5 0%,
+                #008fe0 48%,
+                #007bc2 100%
+            );
+
+        border: 1px solid #006da9;
+
+        box-shadow:
+            inset 0 1px 0 rgba(255,255,255,0.35),
+            inset 0 -3px 4px rgba(0,0,0,0.20),
+            0 5px 0 #006aa6,
+            0 8px 12px rgba(0,0,0,0.18);
+
+        transition:
+            transform 0.08s ease,
+            box-shadow 0.08s ease;
+    }
+
+    .button.zalo:visited,
+    .button.zalo:hover,
+    .button.zalo:active,
+    .button.zalo:focus {
+        color: #ffffff;
+
+        text-decoration: none;
+    }
+
+    .button.zalo:active {
+        transform: translateY(4px);
+
+        box-shadow:
+            inset 0 2px 5px rgba(0,0,0,0.25),
+            0 1px 0 rgba(0,0,0,0.15);
+    }
+
+    .zalo-icon {
+        width: clamp(25px, 6.5vw, 31px);
+        height: clamp(25px, 6.5vw, 31px);
+
+        flex: 0 0 auto;
+
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 7px;
+
+        background: #ffffff;
+
+        color: #008fe0;
+
+        font-family:
+            Arial,
+            Helvetica,
+            sans-serif;
+
+        font-size: clamp(9px, 2.5vw, 12px);
+
+        font-weight: 900;
+
+        letter-spacing: -0.5px;
+
+        box-shadow:
+            0 1px 2px rgba(0,0,0,0.20);
+    }
+
+    .button-text {
+        white-space: nowrap;
+    }
+
+    /* =========================
+       MÀN HÌNH NHỎ
+    ========================= */
+
+    @media (max-width: 380px) {
+
+        body {
+            padding: 8px;
+        }
+
+        .card {
+            border-radius: 14px;
+        }
+
+        .content {
+            padding:
+                18px
+                14px
+                22px;
+        }
+
+        .title {
+            margin-bottom: 18px;
+        }
+
+        .license-plate {
+            border-width: 2px;
+            border-radius: 6px;
+        }
+
+        .license-number {
+            letter-spacing: 0.5px;
+        }
+
+        .phone-box {
+            gap: 7px;
+
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+
+    /* =========================
+       MÀN HÌNH THẤP
+    ========================= */
+
+    @media (max-height: 700px) and (max-width: 600px) {
+
+        .car-image {
+            height: 175px;
+        }
+
+        .content {
+            padding-top: 16px;
+            padding-bottom: 20px;
+        }
+
+        .title {
+            margin-bottom: 16px;
+        }
+
+        .phone-box {
+            margin-bottom: 18px;
+        }
+
+        .info-label {
+            margin-bottom: 5px;
+        }
+
+        .license-plate {
+            margin-bottom: 17px;
+        }
+    }
+
+    /* =========================
+       DESKTOP
+    ========================= */
+
+    @media (min-width: 900px) {
+
+        .card {
+            width: 560px;
+        }
+
+        .car-image {
+            height: 330px;
+        }
+    }
+</style>
+<main class="card">
+
+    <!-- =====================
+         ẢNH XE
+    ====================== -->
+
+    <img
+        class="car-image"
+        src="https://images.summitmedia-digital.com/sap/images/2021/12/09/5-almera-1639020473.jpg"
+        alt="Nissan Almera"
+    >
+
+    <section class="content">
+
+        <!-- TIÊU ĐỀ -->
+
+        <div class="title">
+            LIÊN HỆ CHỦ XE
         </div>
 
 
-    </div>
+        <!-- BIỂN SỐ -->
+
+        <div class="info-label">
+            Biển số xe
+        </div>
+
+        <div class="license-plate">
+
+            <svg
+                class="plate-pattern"
+                viewBox="0 0 520 110"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+            >
+                <g>
+                    <path d="M0 16 C70 0 145 30 220 16 S370 0 520 16"/>
+                    <path d="M0 30 C70 14 145 44 220 30 S370 14 520 30"/>
+                    <path d="M0 44 C70 28 145 58 220 44 S370 28 520 44"/>
+                    <path d="M0 58 C70 42 145 72 220 58 S370 42 520 58"/>
+                    <path d="M0 72 C70 56 145 86 220 72 S370 56 520 72"/>
+                    <path d="M0 86 C70 70 145 100 220 86 S370 70 520 86"/>
+                    <path d="M0 100 C70 84 145 114 220 100 S370 84 520 100"/>
+                </g>
+            </svg>
+
+            <div
+                class="security-emblem"
+                aria-hidden="true"
+            ></div>
+
+            <div
+                class="plate-line"
+                aria-hidden="true"
+            ></div>
+
+            <div class="license-number">
+                30K-391.52
+            </div>
+
+        </div>
 
 
-    <!-- ==================================
-         SỐ ĐIỆN THOẠI
-    =================================== -->
+        <!-- SỐ ĐIỆN THOẠI -->
 
-    <div class="info-label">
-        Số điện thoại
-    </div>
+        <div class="info-label">
+            Số điện thoại
+        </div>
 
+        <!--
+            QUAN TRỌNG:
 
-    <!--
-        TOÀN BỘ THẺ <a> LÀ VÙNG GỌI.
+            Đây là liên kết tel trực tiếp.
 
-        Chạm vào:
-        - icon
-        - số điện thoại
-        - khoảng trống bên trái
-        - khoảng trống bên phải
-        - bất kỳ vị trí nào trong nền xanh
+            Người dùng chạm vào chính ô này
+            => Safari nhận được một thao tác người dùng
+            => mở chức năng điện thoại của iPhone.
 
-        đều là cùng một liên kết:
+            Không có JavaScript.
+        -->
 
-        tel:+84904971401
-
-        KHÔNG sử dụng JavaScript.
-    -->
-
-    <a
-        class="phone-box"
-        href="tel:+84904971401"
-        aria-label="Gọi 0904.971.401"
-    >
-
-
-        <!-- ICON -->
-
-        <svg
-            class="phone-icon"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
+        <a
+            class="phone-box"
+            href="tel:+84904971401"
+            aria-label="Gọi 0904.971.401"
         >
 
-            <path d="
-                M6.62 10.79
-                c1.44 2.83
-                3.76 5.15
-                6.59 6.59
+            <!-- ICON ĐIỆN THOẠI -->
 
-                l2.2-2.2
+            <svg
+                class="phone-icon"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+            >
+                <path d="
+                    M6.62 10.79
+                    c1.44 2.83 3.76 5.15 6.59 6.59
+                    l2.2-2.2
+                    c.27-.27.67-.36 1.02-.24
+                    c1.12.37 2.33.57 3.57.57
+                    c.55 0 1 .45 1 1
+                    V20
+                    c0 .55-.45 1-1 1
+                    C10.61 21 3 13.39 3 4
+                    c0-.55.45-1 1-1
+                    h3.5
+                    c.55 0 1 .45 1 1
+                    c0 1.25.2 2.45.57 3.57
+                    c.11.35.03.74-.25 1.02
+                    l-2.2 2.2z
+                "/>
+            </svg>
 
-                c.27-.27
-                .67-.36
-                1.02-.24
+            <span class="phone-number">
+                0904.971.401
+            </span>
 
-                c1.12.37
-                2.33.57
-                3.57.57
-
-                c.55 0
-                1 .45
-                1 1
-
-                V20
-
-                c0 .55
-                -.45 1
-                -1 1
-
-                C10.61 21
-                3 13.39
-                3 4
-
-                c0-.55
-                .45-1
-                1-1
-
-                h3.5
-
-                c.55 0
-                1 .45
-                1 1
-
-                c0 1.25
-                .2 2.45
-                .57 3.57
-
-                c.11.35
-                .03.74
-                -.25 1.02
-
-                l-2.2 2.2z
-            "/>
-
-        </svg>
+        </a>
 
 
-        <!-- SỐ -->
+        <!-- ZALO -->
 
-        <span class="phone-number">
-            0904.971.401
-        </span>
+        <div class="buttons">
 
+            <a
+                class="button zalo"
+                href="https://zalo.me/0904971401"
+                target="_blank"
+                rel="noopener"
+                aria-label="Nhắn tin Zalo"
+            >
 
-    </a>
+                <span class="zalo-icon">
+                    Zalo
+                </span>
 
+                <span class="button-text">
+                    NHẮN TIN ZALO
+                </span>
 
-    <!-- ==================================
-         ZALO
-    =================================== -->
+            </a>
 
-    <a
-        class="button zalo"
-        href="https://zalo.me/0904971401"
-        target="_blank"
-        rel="noopener"
-        aria-label="Nhắn tin Zalo"
-    >
+        </div>
 
-        <span class="zalo-icon">
-            Zalo
-        </span>
+    </section>
 
-        <span class="button-text">
-            NHẮN TIN ZALO
-        </span>
-
-    </a>
-
-
-</section>
+</main>
