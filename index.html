@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="format-detection" content="telephone=no">
+    
+    <!-- Cho phép trình duyệt di động kích hoạt ứng dụng Gọi điện thoại -->
+    <meta name="format-detection" content="telephone=yes">
 
     <title>Liên hệ chủ xe</title>
 
@@ -45,43 +47,26 @@
             background: #f2f2f2;
         }
 
-        /* =========================
-           KHUNG CHÍNH
-        ========================= */
-
+        /* KHUNG CHÍNH */
         .card {
             width: min(100%, 560px);
-
             overflow: hidden;
-
             background: #ffffff;
-
             border-radius: 18px;
-
-            box-shadow:
-                0 10px 30px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
         }
 
-        /* =========================
-           ẢNH XE
-        ========================= */
-
+        /* ẢNH XE */
         .car-image {
             display: block;
-
             width: 100%;
             height: clamp(210px, 42vw, 330px);
-
             object-fit: cover;
             object-position: center;
-
             background: #eeeeee;
         }
 
-        /* =========================
-           NỘI DUNG
-        ========================= */
-
+        /* NỘI DUNG */
         .content {
             padding:
                 clamp(22px, 5vw, 30px)
@@ -91,103 +76,63 @@
 
         .title {
             margin-bottom: clamp(20px, 5vw, 28px);
-
             text-align: center;
-
             font-size: clamp(22px, 6vw, 30px);
             line-height: 1.15;
-
             font-weight: 900;
-
             color: #111111;
         }
 
         .info-label {
             margin-bottom: 8px;
-
             text-align: center;
-
             font-size: clamp(14px, 3.8vw, 17px);
             line-height: 1.2;
-
             font-weight: 700;
-
             color: #555555;
         }
 
-        /* =========================
-           BIỂN SỐ XE
-        ========================= */
-
+        /* BIỂN SỐ XE */
         .license-plate {
             position: relative;
-
             width: 100%;
-
             aspect-ratio: 520 / 110;
-
             margin: 0 auto clamp(20px, 5vw, 28px);
-
             overflow: hidden;
-
             background: #ffffff;
-
             border: 3px solid #111111;
-
             border-radius: 8px;
-
             box-shadow:
                 inset 0 1px 2px rgba(0, 0, 0, 0.10),
                 inset 0 -2px 3px rgba(0, 0, 0, 0.08),
                 0 3px 7px rgba(0, 0, 0, 0.18);
         }
 
-        /* =========================
-           HOA VĂN CHÌM
-        ========================= */
-
         .plate-pattern {
             position: absolute;
-
             inset: 0;
-
             width: 100%;
             height: 100%;
-
             z-index: 1;
-
             pointer-events: none;
         }
 
         .plate-pattern path {
             fill: none;
-
             stroke: #777777;
-
             stroke-width: 0.7;
-
             opacity: 0.16;
         }
 
-        /* =========================
-           DẤU CHÌM
-        ========================= */
-
         .security-emblem {
             position: absolute;
-
             top: 8%;
             left: 50%;
-
             width: 24px;
             height: 24px;
-
             transform: translateX(-50%);
-
             z-index: 3;
-
             border-radius: 50%;
-
             background:
                 radial-gradient(
                     circle at 35% 30%,
@@ -196,119 +141,67 @@
                     rgba(120,120,120,0.12) 60%,
                     rgba(70,70,70,0.22) 100%
                 );
-
             box-shadow:
                 inset 1px 1px 2px rgba(0,0,0,0.22),
                 inset -1px -1px 2px rgba(255,255,255,0.95);
-
             opacity: 0.42;
         }
 
         .security-emblem::before {
             content: "★";
-
             position: absolute;
-
             left: 50%;
             top: 50%;
-
             transform: translate(-50%, -52%);
-
             font-size: 11px;
-
             line-height: 1;
-
             color: rgba(90, 90, 90, 0.35);
-
             text-shadow:
                 1px 1px 1px rgba(255,255,255,0.9),
                 -1px -1px 1px rgba(0,0,0,0.15);
         }
 
-        /* =========================
-           ĐƯỜNG NGANG BIỂN
-        ========================= */
-
         .plate-line {
             position: absolute;
-
             left: 7%;
             right: 7%;
-
             top: 34%;
-
             height: 1px;
-
             z-index: 3;
-
             background: rgba(40,40,40,0.30);
-
-            box-shadow:
-                0 1px 1px rgba(255,255,255,0.85);
+            box-shadow: 0 1px 1px rgba(255,255,255,0.85);
         }
-
-        /* =========================
-           SỐ BIỂN
-        ========================= */
 
         .license-number {
             position: absolute;
-
             left: 2%;
             right: 2%;
-
             bottom: 5%;
-
             z-index: 4;
-
             text-align: center;
-
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
-
+            font-family: Arial, Helvetica, sans-serif;
             font-size: clamp(28px, 8vw, 48px);
-
             line-height: 1;
-
             font-weight: 900;
-
             letter-spacing: clamp(1px, 0.35vw, 2px);
-
             color: #050505;
-
             white-space: nowrap;
-
             text-shadow:
                 0 1px 0 rgba(255,255,255,0.7),
                 0 -1px 0 rgba(0,0,0,0.20);
         }
 
-        /* =========================
-           KHUNG SỐ ĐIỆN THOẠI
-           ========================= */
-
+        /* KHUNG SỐ ĐIỆN THOẠI NÚT GỌI */
         .phone-box {
             width: 100%;
-
             min-height: clamp(58px, 14vw, 72px);
-
             margin: 0 auto clamp(22px, 5vw, 30px);
-
             display: flex;
-
             justify-content: center;
             align-items: center;
-
             gap: 10px;
-
             padding: 8px 18px;
-
             border-radius: clamp(10px, 2.5vw, 15px);
-
-            /* XANH GIỐNG MÀU CALL CỦA iPHONE */
-
             background:
                 linear-gradient(
                     to bottom,
@@ -316,92 +209,53 @@
                     #32C257 48%,
                     #30B957 100%
                 );
-
             border: 1px solid #28A745;
-
             box-shadow:
                 inset 0 1px 0 rgba(255,255,255,0.35),
                 inset 0 -3px 5px rgba(0,0,0,0.16),
                 0 5px 0 #24963D,
                 0 8px 12px rgba(0,0,0,0.18);
-
             text-decoration: none !important;
-
             color: #ffffff !important;
-
             cursor: pointer;
-
             user-select: none;
             -webkit-user-select: none;
-
-            transition:
-                transform 0.08s ease,
-                box-shadow 0.08s ease;
+            transition: transform 0.08s ease, box-shadow 0.08s ease;
         }
 
         .phone-box:active {
             transform: translateY(4px);
-
             box-shadow:
                 inset 0 2px 5px rgba(0,0,0,0.25),
                 0 1px 0 rgba(0,0,0,0.15);
         }
 
-        /* =========================
-           ICON CALL
-        ========================= */
-
         .phone-icon {
             width: clamp(22px, 6vw, 28px);
             height: clamp(22px, 6vw, 28px);
-
             flex: 0 0 auto;
-
             fill: #ffffff;
-
-            filter:
-                drop-shadow(
-                    0 1px 1px rgba(0,0,0,0.15)
-                );
+            filter: drop-shadow(0 1px 1px rgba(0,0,0,0.15));
         }
-
-        /* =========================
-           SỐ ĐIỆN THOẠI
-        ========================= */
 
         .phone-number {
             display: flex;
-
             justify-content: center;
             align-items: center;
-
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
-
+            font-family: Arial, Helvetica, sans-serif;
             font-size: clamp(28px, 8vw, 48px);
-
             line-height: 1;
-
             font-weight: 900;
-
             letter-spacing: clamp(1px, 0.4vw, 2px);
-
             white-space: nowrap;
-
             color: #ffffff !important;
-
             text-decoration: none !important;
-
             -webkit-text-decoration: none !important;
         }
 
         .phone-number span {
             color: #ffffff !important;
-
             text-decoration: none !important;
-
             -webkit-text-decoration: none !important;
         }
 
@@ -411,49 +265,31 @@
         .phone-box:active,
         .phone-box:focus {
             color: #ffffff !important;
-
             text-decoration: none !important;
-
             -webkit-text-decoration: none !important;
         }
 
-        /* =========================
-           NÚT ZALO
-        ========================= */
-
+        /* NÚT ZALO */
         .buttons {
             width: 100%;
         }
 
         .button.zalo {
             width: 100%;
-
             min-height: clamp(58px, 14vw, 70px);
-
             display: flex;
-
             justify-content: center;
             align-items: center;
-
             gap: 9px;
-
             padding: 10px 12px;
-
             border-radius: 14px;
-
             text-decoration: none;
-
             font-size: clamp(14px, 3.7vw, 18px);
-
             font-weight: 900;
-
             color: #ffffff;
-
             cursor: pointer;
-
             user-select: none;
             -webkit-user-select: none;
-
             background:
                 linear-gradient(
                     to bottom,
@@ -461,155 +297,66 @@
                     #008fe0 48%,
                     #007bc2 100%
                 );
-
             border: 1px solid #006da9;
-
             box-shadow:
                 inset 0 1px 0 rgba(255,255,255,0.35),
                 inset 0 -3px 4px rgba(0,0,0,0.20),
                 0 5px 0 #006aa6,
                 0 8px 12px rgba(0,0,0,0.18);
-
-            transition:
-                transform 0.08s ease,
-                box-shadow 0.08s ease;
+            transition: transform 0.08s ease, box-shadow 0.08s ease;
         }
 
         .button.zalo:active {
             transform: translateY(4px);
-
             box-shadow:
                 inset 0 2px 5px rgba(0,0,0,0.25),
                 0 1px 0 rgba(0,0,0,0.15);
         }
 
-        /* =========================
-           ICON ZALO
-        ========================= */
-
         .zalo-icon {
             width: clamp(25px, 6.5vw, 31px);
             height: clamp(25px, 6.5vw, 31px);
-
             flex: 0 0 auto;
-
             display: flex;
-
             justify-content: center;
             align-items: center;
-
             border-radius: 7px;
-
             background: #ffffff;
-
             color: #008fe0;
-
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
-
+            font-family: Arial, Helvetica, sans-serif;
             font-size: clamp(9px, 2.5vw, 12px);
-
             font-weight: 900;
-
             letter-spacing: -0.5px;
-
-            box-shadow:
-                0 1px 2px rgba(0,0,0,0.20);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.20);
         }
 
         .button-text {
             white-space: nowrap;
         }
 
-        /* =========================
-           MÀN HÌNH NHỎ
-        ========================= */
-
+        /* MEDIA QUERIES */
         @media (max-width: 380px) {
-
-            body {
-                padding: 8px;
-            }
-
-            .card {
-                border-radius: 14px;
-            }
-
-            .content {
-                padding:
-                    18px
-                    14px
-                    22px;
-            }
-
-            .title {
-                margin-bottom: 18px;
-            }
-
-            .license-plate {
-                border-width: 2px;
-                border-radius: 6px;
-            }
-
-            .license-number {
-                letter-spacing: 0.5px;
-            }
-
-            .phone-box {
-                gap: 7px;
-
-                padding-left: 10px;
-                padding-right: 10px;
-            }
+            body { padding: 8px; }
+            .card { border-radius: 14px; }
+            .content { padding: 18px 14px 22px; }
+            .title { margin-bottom: 18px; }
+            .license-plate { border-width: 2px; border-radius: 6px; }
+            .license-number { letter-spacing: 0.5px; }
+            .phone-box { gap: 7px; padding-left: 10px; padding-right: 10px; }
         }
-
-        /* =========================
-           MÀN HÌNH THẤP
-        ========================= */
 
         @media (max-height: 700px) and (max-width: 600px) {
-
-            .car-image {
-                height: 175px;
-            }
-
-            .content {
-                padding-top: 16px;
-                padding-bottom: 20px;
-            }
-
-            .title {
-                margin-bottom: 16px;
-            }
-
-            .phone-box {
-                margin-bottom: 18px;
-            }
-
-            .info-label {
-                margin-bottom: 5px;
-            }
-
-            .license-plate {
-                margin-bottom: 17px;
-            }
+            .car-image { height: 175px; }
+            .content { padding-top: 16px; padding-bottom: 20px; }
+            .title { margin-bottom: 16px; }
+            .phone-box { margin-bottom: 18px; }
+            .info-label { margin-bottom: 5px; }
+            .license-plate { margin-bottom: 17px; }
         }
 
-        /* =========================
-           MÁY TÍNH
-        ========================= */
-
         @media (min-width: 900px) {
-
-            .card {
-                width: 560px;
-            }
-
-            .car-image {
-                height: 330px;
-            }
+            .card { width: 560px; }
+            .car-image { height: 330px; }
         }
     </style>
 </head>
@@ -618,38 +365,26 @@
 
     <main class="card">
 
-        <!-- =========================
-             ẢNH XE
-        ========================= -->
-
+        <!-- ẢNH XE -->
         <img
             class="car-image"
             src="https://images.summitmedia-digital.com/sap/images/2021/12/09/5-almera-1639020473.jpg"
             alt="Nissan Almera"
         >
 
-
         <section class="content">
 
             <!-- TIÊU ĐỀ -->
-
             <div class="title">
                 LIÊN HỆ CHỦ XE
             </div>
 
-
-            <!-- =========================
-                 BIỂN SỐ
-            ========================= -->
-
+            <!-- BIỂN SỐ -->
             <div class="info-label">
                 Biển số xe
             </div>
 
             <div class="license-plate">
-
-                <!-- HOA VĂN CHÌM -->
-
                 <svg
                     class="plate-pattern"
                     viewBox="0 0 520 110"
@@ -667,54 +402,24 @@
                     </g>
                 </svg>
 
-
-                <!-- DẤU CHÌM -->
-
-                <div
-                    class="security-emblem"
-                    aria-hidden="true"
-                ></div>
-
-
-                <!-- ĐƯỜNG NGANG -->
-
-                <div
-                    class="plate-line"
-                    aria-hidden="true"
-                ></div>
-
-
-                <!-- BIỂN SỐ -->
+                <div class="security-emblem" aria-hidden="true"></div>
+                <div class="plate-line" aria-hidden="true"></div>
 
                 <div class="license-number">
                     30K-391.52
                 </div>
-
             </div>
 
-
-            <!-- =========================
-                 SỐ ĐIỆN THOẠI
-            ========================= -->
-
+            <!-- SỐ ĐIỆN THOẠI (NÚT GỌI TRỰC TIẾP) -->
             <div class="info-label">
                 Số điện thoại
             </div>
-
-
-            <!--
-                TOÀN BỘ KHUNG LÀ NÚT GỌI.
-                BẤM VÀO BẤT KỲ VỊ TRÍ NÀO TRONG KHUNG ĐỀU GỌI.
-            -->
 
             <a
                 class="phone-box"
                 href="tel:0904971401"
                 aria-label="Gọi 0904 971 401"
             >
-
-                <!-- ICON ĐIỆN THOẠI iPHONE -->
-
                 <svg
                     class="phone-icon"
                     viewBox="0 0 24 24"
@@ -738,9 +443,6 @@
                     />
                 </svg>
 
-
-                <!-- SỐ ĐIỆN THOẠI -->
-
                 <div class="phone-number">
                     <span>0904</span>
                     <span>.</span>
@@ -748,16 +450,10 @@
                     <span>.</span>
                     <span>401</span>
                 </div>
-
             </a>
 
-
-            <!-- =========================
-                 NÚT ZALO
-            ========================= -->
-
+            <!-- NÚT ZALO -->
             <div class="buttons">
-
                 <a
                     class="button zalo"
                     href="https://zalo.me/0904971401"
@@ -765,17 +461,9 @@
                     rel="noopener"
                     aria-label="Nhắn tin Zalo"
                 >
-
-                    <span class="zalo-icon">
-                        Zalo
-                    </span>
-
-                    <span class="button-text">
-                        NHẮN TIN ZALO
-                    </span>
-
+                    <span class="zalo-icon">Zalo</span>
+                    <span class="button-text">NHẮN TIN ZALO</span>
                 </a>
-
             </div>
 
         </section>
