@@ -20,6 +20,7 @@
         margin: 0;
         width: 100%;
         min-height: 100dvh;
+
         padding:
             max(12px, env(safe-area-inset-top))
             max(12px, env(safe-area-inset-right))
@@ -48,9 +49,11 @@
 
     .card {
         width: min(100%, 560px);
+
         overflow: hidden;
 
         background: #ffffff;
+
         border-radius: 18px;
 
         box-shadow:
@@ -91,6 +94,7 @@
 
         font-size: clamp(22px, 6vw, 30px);
         line-height: 1.15;
+
         font-weight: 900;
 
         color: #111111;
@@ -103,6 +107,7 @@
 
         font-size: clamp(14px, 3.8vw, 17px);
         line-height: 1.2;
+
         font-weight: 700;
 
         color: #555555;
@@ -116,17 +121,18 @@
         position: relative;
 
         width: 100%;
+
         aspect-ratio: 520 / 110;
 
         margin: 0 auto clamp(20px, 5vw, 28px);
 
         overflow: hidden;
 
-        /* QUAN TRỌNG:
-           NỀN TRẮNG TINH */
+        /* NỀN TRẮNG TINH */
         background: #ffffff;
 
         border: 3px solid #111111;
+
         border-radius: 8px;
 
         box-shadow:
@@ -135,12 +141,10 @@
             0 3px 7px rgba(0, 0, 0, 0.18);
     }
 
-    /*
-     * Hoa văn chìm:
-     * Chỉ là các đường cong mảnh, trong suốt.
-     * Không dùng repeating-linear-gradient nên
-     * KHÔNG tạo các ô hình chữ nhật.
-     */
+    /* =========================
+       HOA VĂN CHÌM
+       ========================= */
+
     .plate-pattern {
         position: absolute;
 
@@ -158,13 +162,14 @@
         fill: none;
 
         stroke: #777777;
+
         stroke-width: 0.7;
 
         opacity: 0.16;
     }
 
     /* =========================
-       DẤU CHÌM CÔNG AN HIỆU
+       DẤU CHÌM
        ========================= */
 
     .security-emblem {
@@ -182,9 +187,6 @@
 
         border-radius: 50%;
 
-        /*
-         * Tạo cảm giác dấu được dập/chìm
-         */
         background:
             radial-gradient(
                 circle at 35% 30%,
@@ -212,6 +214,7 @@
         transform: translate(-50%, -52%);
 
         font-size: 11px;
+
         line-height: 1;
 
         color: rgba(90, 90, 90, 0.35);
@@ -222,7 +225,7 @@
     }
 
     /* =========================
-       ĐƯỜNG NGANG TRÊN BIỂN
+       ĐƯỜNG NGANG BIỂN SỐ
        ========================= */
 
     .plate-line {
@@ -230,6 +233,7 @@
 
         left: 7%;
         right: 7%;
+
         top: 34%;
 
         height: 1px;
@@ -251,6 +255,7 @@
 
         left: 2%;
         right: 2%;
+
         bottom: 5%;
 
         z-index: 4;
@@ -263,6 +268,7 @@
             sans-serif;
 
         font-size: clamp(28px, 8vw, 48px);
+
         line-height: 1;
 
         font-weight: 900;
@@ -279,7 +285,11 @@
     }
 
     /* =========================
-       SỐ ĐIỆN THOẠI
+       KHUNG SỐ ĐIỆN THOẠI
+       =========================
+       
+       Toàn bộ khung là link tel:
+       bấm ở bất kỳ vị trí nào cũng gọi.
        ========================= */
 
     .phone-box {
@@ -290,104 +300,21 @@
         margin: 0 auto clamp(22px, 5vw, 30px);
 
         display: flex;
+
         justify-content: center;
         align-items: center;
+
+        gap: 10px;
+
+        padding:
+            8px 18px;
 
         border-radius: clamp(10px, 2.5vw, 15px);
 
         /*
-         * Đỏ theo tông US flag
+         * XANH iOS
+         * Giống màu xanh của biểu tượng Phone
          */
-        background: #B22234;
-
-        border: 1px solid #941b2c;
-
-        box-shadow:
-            inset 0 1px 0 rgba(255,255,255,0.25),
-            inset 0 -3px 5px rgba(0,0,0,0.15),
-            0 5px 10px rgba(0,0,0,0.20);
-    }
-
-    .phone-number {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        font-family:
-            Arial,
-            Helvetica,
-            sans-serif;
-
-        font-size: clamp(28px, 8vw, 48px);
-        line-height: 1;
-
-        font-weight: 900;
-
-        letter-spacing: clamp(1px, 0.4vw, 2px);
-
-        white-space: nowrap;
-
-        /*
-         * Ép màu trắng trên iPhone/Safari
-         */
-        color: #ffffff !important;
-        text-decoration: none !important;
-        -webkit-text-decoration: none !important;
-    }
-
-    .phone-number span {
-        color: #ffffff !important;
-        text-decoration: none !important;
-        -webkit-text-decoration: none !important;
-    }
-
-    /* =========================
-       CÁC NÚT
-       ========================= */
-
-    .buttons {
-        display: flex;
-
-        gap: clamp(12px, 3vw, 18px);
-    }
-
-    .button {
-        flex: 1;
-
-        min-height: clamp(58px, 14vw, 70px);
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        gap: 9px;
-
-        padding: 10px 12px;
-
-        border-radius: 14px;
-
-        text-decoration: none;
-
-        font-size: clamp(14px, 3.7vw, 18px);
-        font-weight: 900;
-
-        color: #ffffff;
-
-        cursor: pointer;
-
-        user-select: none;
-        -webkit-user-select: none;
-
-        transition:
-            transform 0.08s ease,
-            box-shadow 0.08s ease;
-    }
-
-    /* =========================
-       NÚT GỌI
-       ========================= */
-
-    .button.call {
         background:
             linear-gradient(
                 to bottom,
@@ -400,16 +327,153 @@
 
         box-shadow:
             inset 0 1px 0 rgba(255,255,255,0.35),
-            inset 0 -3px 4px rgba(0,0,0,0.16),
+            inset 0 -3px 5px rgba(0,0,0,0.16),
             0 5px 0 #24963D,
             0 8px 12px rgba(0,0,0,0.18);
+
+        /*
+         * Đảm bảo đây là nút/link gọi
+         */
+        text-decoration: none !important;
+
+        color: #ffffff !important;
+
+        cursor: pointer;
+
+        user-select: none;
+        -webkit-user-select: none;
+
+        transition:
+            transform 0.08s ease,
+            box-shadow 0.08s ease;
+    }
+
+    /*
+     * Khi nhấn vào khung số điện thoại
+     */
+    .phone-box:active {
+        transform: translateY(4px);
+
+        box-shadow:
+            inset 0 2px 5px rgba(0,0,0,0.25),
+            0 1px 0 rgba(0,0,0,0.15);
+    }
+
+    /* =========================
+       ICON CALL iPHONE
+       ========================= */
+
+    .phone-icon {
+        width: clamp(22px, 6vw, 28px);
+        height: clamp(22px, 6vw, 28px);
+
+        flex: 0 0 auto;
+
+        fill: #ffffff;
+
+        filter:
+            drop-shadow(
+                0 1px 1px rgba(0,0,0,0.15)
+            );
+    }
+
+    /* =========================
+       SỐ ĐIỆN THOẠI
+       ========================= */
+
+    .phone-number {
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        font-family:
+            Arial,
+            Helvetica,
+            sans-serif;
+
+        font-size: clamp(28px, 8vw, 48px);
+
+        line-height: 1;
+
+        font-weight: 900;
+
+        letter-spacing: clamp(1px, 0.4vw, 2px);
+
+        white-space: nowrap;
+
+        /*
+         * BẮT BUỘC TRẮNG
+         * Không gạch chân
+         * Không link xanh
+         */
+        color: #ffffff !important;
+
+        text-decoration: none !important;
+
+        -webkit-text-decoration: none !important;
+    }
+
+    .phone-number span {
+        color: #ffffff !important;
+
+        text-decoration: none !important;
+
+        -webkit-text-decoration: none !important;
+    }
+
+    /*
+     * Đảm bảo Safari/iPhone không đổi màu
+     */
+    .phone-box,
+    .phone-box:visited,
+    .phone-box:hover,
+    .phone-box:active,
+    .phone-box:focus {
+        color: #ffffff !important;
+
+        text-decoration: none !important;
+
+        -webkit-text-decoration: none !important;
     }
 
     /* =========================
        NÚT ZALO
        ========================= */
 
+    .buttons {
+        width: 100%;
+    }
+
     .button.zalo {
+        width: 100%;
+
+        min-height: clamp(58px, 14vw, 70px);
+
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        gap: 9px;
+
+        padding: 10px 12px;
+
+        border-radius: 14px;
+
+        text-decoration: none;
+
+        font-size: clamp(14px, 3.7vw, 18px);
+
+        font-weight: 900;
+
+        color: #ffffff;
+
+        cursor: pointer;
+
+        user-select: none;
+        -webkit-user-select: none;
+
         background:
             linear-gradient(
                 to bottom,
@@ -425,31 +489,19 @@
             inset 0 -3px 4px rgba(0,0,0,0.20),
             0 5px 0 #006aa6,
             0 8px 12px rgba(0,0,0,0.18);
+
+        transition:
+            transform 0.08s ease,
+            box-shadow 0.08s ease;
     }
 
-    /* =========================
-       HIỆU ỨNG NHẤN NÚT
-       ========================= */
-
-    .button:active {
+    /* Hiệu ứng nhấn Zalo */
+    .button.zalo:active {
         transform: translateY(4px);
 
         box-shadow:
             inset 0 2px 5px rgba(0,0,0,0.25),
             0 1px 0 rgba(0,0,0,0.15);
-    }
-
-    /* =========================
-       ICON ĐIỆN THOẠI
-       ========================= */
-
-    .phone-icon {
-        width: clamp(21px, 6vw, 27px);
-        height: clamp(21px, 6vw, 27px);
-
-        flex: 0 0 auto;
-
-        fill: #ffffff;
     }
 
     /* =========================
@@ -463,6 +515,7 @@
         flex: 0 0 auto;
 
         display: flex;
+
         justify-content: center;
         align-items: center;
 
@@ -478,6 +531,7 @@
             sans-serif;
 
         font-size: clamp(9px, 2.5vw, 12px);
+
         font-weight: 900;
 
         letter-spacing: -0.5px;
@@ -517,6 +571,7 @@
 
         .license-plate {
             border-width: 2px;
+
             border-radius: 6px;
         }
 
@@ -524,14 +579,11 @@
             letter-spacing: 0.5px;
         }
 
-        .buttons {
-            gap: 8px;
-        }
+        .phone-box {
+            gap: 7px;
 
-        .button {
-            gap: 6px;
-            padding-left: 7px;
-            padding-right: 7px;
+            padding-left: 10px;
+            padding-right: 10px;
         }
     }
 
@@ -586,22 +638,30 @@
 <body>
 <main class="card">
 
-    <!-- ẢNH XE -->
+    <!-- =========================
+         ẢNH XE
+         ========================= -->
+
     <img
         class="car-image"
         src="https://images.summitmedia-digital.com/sap/images/2021/12/09/5-almera-1639020473.jpg"
         alt="Nissan Almera"
     >
 
+
     <section class="content">
 
         <!-- TIÊU ĐỀ -->
+
         <div class="title">
             LIÊN HỆ CHỦ XE
         </div>
 
 
-        <!-- BIỂN SỐ -->
+        <!-- =========================
+             BIỂN SỐ
+             ========================= -->
+
         <div class="info-label">
             Biển số xe
         </div>
@@ -609,6 +669,7 @@
         <div class="license-plate">
 
             <!-- HOA VĂN CHÌM -->
+
             <svg
                 class="plate-pattern"
                 viewBox="0 0 520 110"
@@ -628,6 +689,7 @@
 
 
             <!-- DẤU CHÌM -->
+
             <div
                 class="security-emblem"
                 aria-hidden="true"
@@ -635,6 +697,7 @@
 
 
             <!-- ĐƯỜNG NGANG -->
+
             <div
                 class="plate-line"
                 aria-hidden="true"
@@ -642,6 +705,7 @@
 
 
             <!-- BIỂN SỐ -->
+
             <div class="license-number">
                 30K-391.52
             </div>
@@ -649,65 +713,71 @@
         </div>
 
 
-        <!-- SỐ ĐIỆN THOẠI -->
+        <!-- =========================
+             SỐ ĐIỆN THOẠI
+             ========================= -->
+
         <div class="info-label">
             Số điện thoại
         </div>
 
-        <div class="phone-box">
+
+        <!--
+            TOÀN BỘ KHUNG NÀY LÀ NÚT GỌI.
+            BẤM VÀO SỐ HOẶC VÙNG XUNG QUANH ĐỀU GỌI.
+        -->
+
+        <a
+            class="phone-box"
+            href="tel:0904971401"
+            aria-label="Gọi 0904 971 401"
+        >
+
+            <!-- ICON ĐIỆN THOẠI -->
+
+            <svg
+                class="phone-icon"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+            >
+                <path d="M6.62 10.79
+                    c1.44 2.83 3.76 5.15 6.59 6.59
+                    l2.2-2.2
+                    c.27-.27.67-.36 1.02-.24
+                    c1.12.37 2.33.57 3.57.57
+                    c.55 0 1 .45 1 1
+                    V20
+                    c0 .55-.45 1-1 1
+                    C10.61 21 3 13.39 3 4
+                    c0-.55.45-1 1-1
+                    h3.5
+                    c.55 0 1 .45 1 1
+                    c0 1.25.2 2.45.57 3.57
+                    c.11.35.03.74-.25 1.02
+                    l-2.2 2.2z"
+                />
+            </svg>
+
+
+            <!-- SỐ ĐIỆN THOẠI -->
 
             <div class="phone-number">
-                <span>0904</span>
+                <span>0909</span>
                 <span>.</span>
-                <span>971</span>
+                <span>999</span>
                 <span>.</span>
-                <span>401</span>
+                <span>999</span>
             </div>
 
-        </div>
+        </a>
 
 
-        <!-- CÁC NÚT -->
+        <!-- =========================
+             NÚT ZALO
+             ========================= -->
+
         <div class="buttons">
 
-            <!-- GỌI -->
-            <a
-                class="button call"
-                href="tel:0904971401"
-                aria-label="Gọi ngay cho chủ xe"
-            >
-
-                <svg
-                    class="phone-icon"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                >
-                    <path d="M6.62 10.79
-                        c1.44 2.83 3.76 5.15 6.59 6.59
-                        l2.2-2.2
-                        c.27-.27.67-.36 1.02-.24
-                        c1.12.37 2.33.57 3.57.57
-                        c.55 0 1 .45 1 1
-                        V20
-                        c0 .55-.45 1-1 1
-                        C10.61 21 3 13.39 3 4
-                        c0-.55.45-1 1-1
-                        h3.5
-                        c.55 0 1 .45 1 1
-                        c0 1.25.2 2.45.57 3.57
-                        c.11.35.03.74-.25 1.02
-                        l-2.2 2.2z"
-                    />
-                </svg>
-
-                <span class="button-text">
-                    GỌI NGAY
-                </span>
-
-            </a>
-
-
-            <!-- ZALO -->
             <a
                 class="button zalo"
                 href="https://zalo.me/0904971401"
