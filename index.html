@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="vi"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<!-- Ngăn iPhone tự biến số điện thoại thành link màu xanh -->
+
+<!-- Không cho iPhone tự chuyển số thành link màu xanh -->
 <meta name="format-detection" content="telephone=no">
 
 <title>Liên hệ chủ xe</title>
@@ -77,7 +78,7 @@
     }
 
     /* =========================
-       PHẦN NỘI DUNG
+       NỘI DUNG
        ========================= */
 
     .content {
@@ -128,7 +129,6 @@
 
         overflow: hidden;
 
-        /* NỀN TRẮNG TINH */
         background: #ffffff;
 
         border: 3px solid #111111;
@@ -225,7 +225,7 @@
     }
 
     /* =========================
-       ĐƯỜNG NGANG BIỂN SỐ
+       ĐƯỜNG NGANG BIỂN
        ========================= */
 
     .plate-line {
@@ -288,8 +288,9 @@
        KHUNG SỐ ĐIỆN THOẠI
        =========================
        
-       Toàn bộ khung là link tel:
-       bấm ở bất kỳ vị trí nào cũng gọi.
+       TOÀN BỘ KHUNG LÀ LINK TEL:
+       chạm vào bất kỳ vị trí nào
+       để gọi.
        ========================= */
 
     .phone-box {
@@ -306,14 +307,12 @@
 
         gap: 10px;
 
-        padding:
-            8px 18px;
+        padding: 8px 18px;
 
         border-radius: clamp(10px, 2.5vw, 15px);
 
         /*
-         * XANH iOS
-         * Giống màu xanh của biểu tượng Phone
+         * XANH GIỐNG MÀU CALL CỦA iPHONE
          */
         background:
             linear-gradient(
@@ -331,14 +330,13 @@
             0 5px 0 #24963D,
             0 8px 12px rgba(0,0,0,0.18);
 
-        /*
-         * Đảm bảo đây là nút/link gọi
-         */
-        text-decoration: none !important;
+        cursor: pointer;
 
         color: #ffffff !important;
 
-        cursor: pointer;
+        text-decoration: none !important;
+
+        -webkit-text-decoration: none !important;
 
         user-select: none;
         -webkit-user-select: none;
@@ -349,7 +347,22 @@
     }
 
     /*
-     * Khi nhấn vào khung số điện thoại
+     * Tất cả trạng thái đều giữ màu trắng
+     */
+    .phone-box:link,
+    .phone-box:visited,
+    .phone-box:hover,
+    .phone-box:active,
+    .phone-box:focus {
+        color: #ffffff !important;
+
+        text-decoration: none !important;
+
+        -webkit-text-decoration: none !important;
+    }
+
+    /*
+     * Hiệu ứng nhấn
      */
     .phone-box:active {
         transform: translateY(4px);
@@ -360,7 +373,7 @@
     }
 
     /* =========================
-       ICON CALL iPHONE
+       ICON CALL
        ========================= */
 
     .phone-icon {
@@ -382,10 +395,7 @@
        ========================= */
 
     .phone-number {
-        display: flex;
-
-        justify-content: center;
-        align-items: center;
+        display: block;
 
         font-family:
             Arial,
@@ -402,34 +412,6 @@
 
         white-space: nowrap;
 
-        /*
-         * BẮT BUỘC TRẮNG
-         * Không gạch chân
-         * Không link xanh
-         */
-        color: #ffffff !important;
-
-        text-decoration: none !important;
-
-        -webkit-text-decoration: none !important;
-    }
-
-    .phone-number span {
-        color: #ffffff !important;
-
-        text-decoration: none !important;
-
-        -webkit-text-decoration: none !important;
-    }
-
-    /*
-     * Đảm bảo Safari/iPhone không đổi màu
-     */
-    .phone-box,
-    .phone-box:visited,
-    .phone-box:hover,
-    .phone-box:active,
-    .phone-box:focus {
         color: #ffffff !important;
 
         text-decoration: none !important;
@@ -495,7 +477,17 @@
             box-shadow 0.08s ease;
     }
 
+    .button.zalo:visited,
+    .button.zalo:hover,
+    .button.zalo:active,
+    .button.zalo:focus {
+        color: #ffffff;
+
+        text-decoration: none;
+    }
+
     /* Hiệu ứng nhấn Zalo */
+
     .button.zalo:active {
         transform: translateY(4px);
 
@@ -634,8 +626,6 @@
         }
     }
 </style>
-</head>
-<body>
 <main class="card">
 
     <!-- =========================
@@ -723,14 +713,14 @@
 
 
         <!--
-            TOÀN BỘ KHUNG NÀY LÀ NÚT GỌI.
-            BẤM VÀO SỐ HOẶC VÙNG XUNG QUANH ĐỀU GỌI.
+            KHUNG SỐ ĐIỆN THOẠI LÀ LINK GỌI.
+            CHẠM VÀO KHUNG NÀY ĐỂ GỌI.
         -->
 
         <a
             class="phone-box"
-            href="tel:0904971401"
-            aria-label="Gọi 0904 971 401"
+            href="tel:+84904971401"
+            aria-label="Gọi điện thoại"
         >
 
             <!-- ICON ĐIỆN THOẠI -->
@@ -761,13 +751,9 @@
 
             <!-- SỐ ĐIỆN THOẠI -->
 
-            <div class="phone-number">
-                <span>0909</span>
-                <span>.</span>
-                <span>999</span>
-                <span>.</span>
-                <span>999</span>
-            </div>
+            <span class="phone-number">
+                0904 971 401
+            </span>
 
         </a>
 
@@ -801,4 +787,4 @@
     </section>
 
 </main>
-</body> </html>
+Lưu ý: nếu sau khi thay code mà iPhone vẫn hiện thông báo kiểu “trang web này đã bị chặn tính năng tự động bắt đầu cuộc gọi”, thì đó không phải do nút này tự động gọi: link tel: ở trên chỉ được kích hoạt bởi thao tác chạm trực tiếp của người dùng. Khi đó cần xác định chính xác bạn đang mở GitHub Pages bằng Safari hay bên trong một ứng dụng/webview.
